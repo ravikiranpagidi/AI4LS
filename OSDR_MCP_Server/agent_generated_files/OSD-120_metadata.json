@@ -2,7 +2,7 @@
   "dataset_id": "OSD-120",
   "title": "Genetic dissection of the Arabidopsis spaceflight transcriptome: Are some responses dispensable for the physiological adaptation of plants to spaceflight?",
   "organism": "Arabidopsis thaliana",
-  "mission": "S, p, a, c, e, X, -, 3",
+  "mission": "SpaceX-3",
   "protocols": [
     "growth protocol",
     "sample collection",

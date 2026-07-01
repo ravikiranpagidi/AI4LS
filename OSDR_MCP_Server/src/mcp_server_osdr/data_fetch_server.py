@@ -6,6 +6,8 @@ import os
 import pandas as pd
 import json
 
+from metadata_utils import format_mission_name
+
 OUTPUT_DIR = os.getenv("MCP_OUTPUT_DIR", "../../agent_generated_files")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -28,7 +30,7 @@ async def osdr_fetch_metadata(dataset_id: str) -> dict:
         "dataset_id": dataset_id,
         "title": metadata.get("study title", "N/A"),
         "organism": metadata.get("organism", "N/A"),
-        "mission": ", ".join(metadata.get("mission", {}).get("name", [])) or "N/A",
+        "mission": format_mission_name(metadata.get("mission", {}).get("name")),
         "protocols": metadata.get("study protocol name", []),
         "assay_type": metadata.get("study assay technology type", "N/A"),
         "platform": metadata.get("study assay technology platform", "N/A"),
